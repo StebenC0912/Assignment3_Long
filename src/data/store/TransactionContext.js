@@ -13,12 +13,13 @@ export const TransactionContext = React.createContext({
 function transactionReducer(state, action) {
     switch (action.type) {
         case 'ADD_TRANSACTION':
+            const id = new Date().toString() + Math.random().toString();
             return {
                 ...state,
                 transactions: [
                     ...state.transactions,
                     {
-                        id: state.transactions.length + 1,
+                        id,
                         title: action.payload.title,
                         amount: action.payload.amount,
                         date: action.payload.date,
