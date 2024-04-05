@@ -6,6 +6,8 @@ import AddTransactionScreen from "../screens/AddTransactionScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ExpenseDetail from "../screens/ExpenseDatail";
 import EditScreen from "../screens/EditScreen";
+import WalletScreen from "../screens/WalletScreen";
+import AllExpense from "../screens/AllExpense";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -27,10 +29,33 @@ function HomeStack() {
         component={EditScreen}
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="AllExpense"
+        component={AllExpense}
+        options={{
+          headerTitleAlign: "center",
+        }}
+      />
     </Stack.Navigator>
   );
 }
 
+function WalletStack() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="WalletScreen"
+        component={WalletScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ExpenseDetail"
+        component={ExpenseDetail}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+}
 export default function AppNavigation() {
   return (
     <NavigationContainer>
@@ -57,7 +82,7 @@ export default function AppNavigation() {
         />
         <Tab.Screen
           name="Wallet"
-          component={HomeScreen}
+          component={WalletStack}
           options={{
             headerShown: false,
             tabBarIcon: ({ color }) => (

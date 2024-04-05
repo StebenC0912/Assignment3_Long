@@ -17,6 +17,9 @@ export default function HomeScreen(props) {
   const handleItemClick = (id) => {
     props.navigation.navigate("ExpenseDetail", { id });
   };
+  const handleAllExpense = () => {
+    props.navigation.navigate("AllExpense");
+  }
   const context = useContext(TransactionContext);
   const transactionsList = context.transactions;
   // display 5 recent transactions
@@ -171,7 +174,9 @@ export default function HomeScreen(props) {
             >
               Transactions
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={handleAllExpense}
+            >
               <Text
                 style={StyleSheet.create({
                   fontSize: 16,
@@ -183,7 +188,6 @@ export default function HomeScreen(props) {
               </Text>
             </TouchableOpacity>
           </View>
-          <View></View>
           <FlatList
             scrollEnabled={false}
             data={transactions}
@@ -191,7 +195,9 @@ export default function HomeScreen(props) {
             style={StyleSheet.create({
               flex: 1,
             })}
-            renderItem={({ item }) => <RecentTransaction transaction={item} onPress = {handleItemClick}/>}
+            renderItem={({ item }) => (
+              <RecentTransaction transaction={item} onPress={handleItemClick} />
+            )}
           />
         </View>
       </ScrollView>

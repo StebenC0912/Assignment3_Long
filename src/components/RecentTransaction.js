@@ -6,6 +6,7 @@ export default function RecentTransaction({ transaction, onPress }) {
   return (
     <TouchableOpacity
       style={StyleSheet.create({
+        marginHorizontal: 1,
         flexDirection: "row",
         alignItems: "center",
         padding: 16,
