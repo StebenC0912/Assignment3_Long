@@ -18,7 +18,7 @@ export default function HomeScreen(props) {
     props.navigation.navigate("ExpenseDetail", { id });
   };
   const handleAllExpense = () => {
-    props.navigation.navigate("AllExpense");
+    props.navigation.navigate("All Expense");
   }
   const context = useContext(TransactionContext);
   const transactionsList = context.transactions;

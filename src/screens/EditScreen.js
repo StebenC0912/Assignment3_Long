@@ -113,7 +113,7 @@ export default function EditScreen(props) {
                 fontFamily: "Roboto",
               })}
             >
-              Expense Detail
+              Expense Edit
             </Text>
             <View style={{ height: 24, width: 24 }} />
           </View>

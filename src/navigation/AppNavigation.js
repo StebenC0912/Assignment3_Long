@@ -30,7 +30,7 @@ function HomeStack() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="AllExpense"
+        name="All Expense"
         component={AllExpense}
         options={{
           headerTitleAlign: "center",
